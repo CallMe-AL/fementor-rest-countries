@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 const CountryCard = ({ country, searchVal }) => {
 
   const [load, setLoad] = useState(false);
-  const [matched_terms, setMatchedTerms] = useState([]);
   const card = useRef(null);
 
   useEffect(() => {

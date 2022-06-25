@@ -2,7 +2,6 @@ import CountryCard from './CountryCard';
 import Header from './Header';
 import Input from './Input';
 import { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
 
 function App() {
   
@@ -11,7 +10,6 @@ function App() {
   const [filtered_countries, setFilteredCountries] = useState(null);
   const [filtered_value, setFilteredValue] = useState('');
   const [search_value, setSearchValue] = useState(null);
-  // const [active_country, setActiveCountry] = useState(null);
 
   useEffect(() => {
     // first checks if the country list was already fetched
