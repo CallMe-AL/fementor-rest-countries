@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/fementor-rest-countries/static/css/main.3a3bc066.css",
+    "main.js": "/fementor-rest-countries/static/js/main.a8658c1f.js",
+    "static/js/787.96e06fd7.chunk.js": "/fementor-rest-countries/static/js/787.96e06fd7.chunk.js",
+    "index.html": "/fementor-rest-countries/index.html",
+    "main.3a3bc066.css.map": "/fementor-rest-countries/static/css/main.3a3bc066.css.map",
+    "main.a8658c1f.js.map": "/fementor-rest-countries/static/js/main.a8658c1f.js.map",
+    "787.96e06fd7.chunk.js.map": "/fementor-rest-countries/static/js/787.96e06fd7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a3bc066.css",
+    "static/js/main.a8658c1f.js"
+  ]
+}
