@@ -1,13 +1,461 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+/* ------------------- */
+/* Custom properties   */
+/* ------------------- */
+
+:root {
+
+  /* dark mode */
+  --dm-blue: hsl(209, 23%, 22%);
+  --dm-bg: hsl(207, 26%, 17%);
+
+  /* light mode */
+  --lm-color: hsl(200, 15%, 8%);
+  --lm-input: hsl(0, 0%, 52%);
+  --lm-bg: hsl(0, 0%, 98%);
+
+  /* mix (dark color light elements) */
+  --white: hsl(0, 0%, 100%); 
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+  transition: color 300ms ease-in-out;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  transition: color 300ms ease-in-out;
+}
+
+button,
+textarea,
+select {
+  font: inherit;
+  transition: color 300ms ease-in-out;
+  cursor: pointer;
+}
+
+a {
+  transition: color 300ms ease-in-out;
+}
+
+.light-theme {
+  --bg: var(--lm-bg);
+  --color: var(--lm-color);
+  --input: var(--lm-input);
+  --elements: var(--white);
+}
+
+.dark-theme {
+  --bg: var(--dm-bg);
+  --color: var(--white);
+  --elements: var(--dm-blue);
+  --input: var(--dm-blue);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--color);
+  font-family: 'Nunito Sans', sans-serif;
+  transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+}
+
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* cursor for all buttons */
+button {
+  cursor: pointer;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* ------------------- */
+/* Utility classes     */
+/* ------------------- */
+.flex {
+  display: flex;
+}
+
+.grid-container {
+  display: grid;
+  gap: var(--gap, 1.2rem);
+}
+
+.link-styles {
+  background-color: var(--elements);
+  border-radius: 0.2rem;
+  box-shadow: 0 0 5px var(--input);
+  color: var(--color);
+  text-decoration: none;
+}
+
+/* ------------------- */
+/* Header styles       */
+/* ------------------- */
+header {
+  background-color: var(--elements);
+  box-shadow: 0 0 5px var(--input);
+  font-size: 1rem;
+  padding: 2rem 1rem;
+  margin-bottom: 2rem;
+  transition: background-color 300ms ease-in-out;
+}
+
+.header-wrap {
+  max-width: 1500px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-wrap .logo {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.header-wrap .theme-switcher {
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  color: var(--color);
+}
+
+.header-wrap .theme-switcher .theme-icon {
+  padding-right: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  header {
+    margin-bottom: 3rem;
+  }
+
+  .header-wrap .logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+
+  .header-wrap .theme-switcher {
+    font-size: 1.1rem;
+  }
+}
+
+/* ------------------- */
+/* Input styles        */
+/* ------------------- */
+.input-section {
+  padding: 1rem;
+  max-width: 1500px;
+  margin: 0 auto 2rem auto;
+}
+
+/* search styles */
+.search-form {
+  margin-bottom: 2.5rem;
+}
+
+.search-field {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color);
+  transition: color 300ms ease-in-out;
+}
+
+.search-input {
+  box-shadow: 0 0 8px var(--input);
+  border-color: transparent;
+  border-radius: 0.4rem;
+  width: 100%;
+  padding: 1rem 0 1rem 4rem;
+  color: var(--color);
+  background-color: var(--elements);
+}
+
+/* select styles */
+.select-form {
+  width: max-content;
+}
+
+.select-field {
+  position: relative;
+}
+
+.select-region {
+  color: var(--color);
+  background-color: var(--elements);
+  border: transparent;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 3px var(--input);
+  padding: 1rem 4rem 1rem 2rem;
+  appearance: none;
+}
+
+.chevron-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10%;
+  font-size: 0.7rem;
+  pointer-events: none;
+  color: var(--color);
+  transition: color 300ms ease-in-out;
+}
+
+@media (min-width: 900px) {
+  .input-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-form {
+    margin-bottom: 0;
+    width: 40%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .input-section {
+    padding-inline: 0;
+  }
+}
+
+/* ------------------- */
+/* Country Cards       */
+/* ------------------- */
+.country-list {
+  --gap: clamp(3rem, 5.5vw, 6rem);
+  place-items: center;
+  max-width: 1500px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill , minmax(300px, 1fr));
+  
+}
+
+.country-card {
+  background-color: var(--elements);
+  box-shadow: 0 0 8px var(--input); 
+  width: 300px;
+  border-color: transparent;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.country-link {
+  text-decoration: none;
+  color: var(--color);
+  font-size: 14px;
+}
+
+.country-link .card-content {
+  padding: 1.5rem 1.5rem 3rem 1.5rem;
+}
+
+.country-img-container {
+  width: 100%;
+  height: 200px;
+}
+
+.country-img-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.country-link .card-content h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.country-link .card-content p {
+  font-weight: 600;
+}
+
+.country-link .card-content p:not(:last-child) {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.country-link .card-content p span {
+  font-weight: 300;
+}
+
+/* ------------------- */
+/* Single Card         */
+/* ------------------- */
+.back-link {
+  padding: 0.5rem clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 4rem;
+  align-items: center;
+  width: min-content;
+  gap: 0.5rem;
+}
+
+.main-country-wrap {
+  padding-inline: 1.5rem;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+.inner-country-wrap {
+  --gap: 0;
+}
+
+.inner-country-wrap img {
+  margin-bottom: 2rem;
+  max-height: 400px;
+  width: 515px;
+}
+
+.inner-country-wrap h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.country-info-wrap {
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.country-info p:not(:last-child) {
+  margin-bottom: 0.6rem;
+}
+
+.country-info p span {
+  font-weight: 600;
+}
+
+.border-countries h3 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  max-width: 540px;
+}
+
+.border-countries .border-link {
+  padding: 0.5rem 2rem;
+  font-size: 0.8rem;
+  display: block;
+  width: 90px;
+  text-align: center;
+}
+
+.border-countries .border-link-container {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-bottom: 5rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  .inner-country-wrap {
+    justify-items: center;
+  }
+
+  .country-info-wrap {
+    flex-direction: row;
+    gap: clamp(2rem, 6vw, 6.5rem);
+  }
+}
+
+@media (min-width: 900px) {
+
+  .main-country-wrap {
+    margin-top: 5rem;
+  }
+
+  .inner-country-wrap {
+    grid-template-columns: 1.5fr 2fr;
+    --gap: clamp(2rem, 6.5vw, 7.5rem);
+    max-width: 1500px;
+    justify-items: start;
+  }
+
+  .inner-country-wrap h2 {
+    font-size: 1.6rem;
+  }
+
+  .inner-country-wrap img {
+    margin-bottom: 0;
+    width: 100%;
+    align-self: center;
+  }
+
+  .inner-country-wrap article {
+    align-self: center;
+    justify-self: start;
+    width: 100%;
+  }  
+
+  .border-countries .border-link {
+    padding: 0.5rem 2rem;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-right: 0.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .border-countries .border-link-container {
+    margin-left: 0.6rem;
+    padding-bottom: 0rem;
+    margin-top: 0rem;
+    display: inline;
+  }
+
+  .back-link {
+    gap: 0.8rem;
+  }
 }
