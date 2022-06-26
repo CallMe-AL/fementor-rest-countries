@@ -474,8 +474,10 @@ header {
   color: var(--color);
   box-shadow: 0 0 10px var(--input);
 
-  width: max-content;
-  aspect-ratio: 1;
+  /* width: max-content;
+  aspect-ratio: 1; */
+  width: 3.7rem;
+  height: 3.7rem;
   padding: clamp(1rem, 4vw, 1.5rem);
 
   position: fixed;
@@ -513,9 +515,10 @@ header {
 }
 
 @media (min-width: 700px) {
-  /* .top-btn {
-    padding: 1.5rem;
-  } */
+  .top-btn {
+    width: 5rem;
+    height: 5rem;
+  }
 
   .top-btn-icon {
     font-size: 2rem;
