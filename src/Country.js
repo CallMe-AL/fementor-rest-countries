@@ -27,7 +27,6 @@ const Country = () => {
 
     // if someone enters the page without selecting a country first
     if (params.countryName) {
-      console.log('ok!')
       fetch(`https://restcountries.com/v3.1/alpha/${params.countryName}`)
         .then(res => {
             if (res.status === 500) {
@@ -49,7 +48,6 @@ const Country = () => {
     if (!location.state) return;
 
     const { country, border } = location.state;
-    console.log('country: ', country)
     if (!country) {
       fetch(`https://restcountries.com/v3.1/alpha/${border}`)
         .then(res => res.json())
@@ -91,6 +89,14 @@ const Country = () => {
 
     // Border countries
     setBorderCountries(region.borders);
+  }
+
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
   if (error) {
@@ -148,6 +154,7 @@ const Country = () => {
                                         state={{ border: border }} 
                                         key={border}
                                         className='border-link link-styles'
+                                        onClick={scrollTop}
                                       >                                      
                                       {border}
                                       </Link>

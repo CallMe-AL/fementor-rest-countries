@@ -220,6 +220,8 @@ header {
   padding: 1rem 0 1rem 4rem;
   color: var(--color);
   background-color: var(--elements);
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 /* select styles */
@@ -280,6 +282,7 @@ header {
   max-width: 1500px;
   margin: 0 auto;
   grid-template-columns: repeat(auto-fill , minmax(300px, 1fr));
+  padding-bottom: 5rem;
   
 }
 
@@ -457,5 +460,64 @@ header {
 
   .back-link {
     gap: 0.8rem;
+  }
+}
+
+/* ------------------- */
+/* Back to top btn     */
+/* ------------------- */
+
+.top-btn {
+  border-radius: 50%;
+  border: 1px solid var(--color);
+  background-color: var(--elements);
+  color: var(--color);
+  box-shadow: 0 0 10px var(--input);
+
+  width: max-content;
+  aspect-ratio: 1;
+  padding: clamp(1rem, 4vw, 1.5rem);
+
+  position: fixed;
+  bottom: 5vh;
+  right: 5vw;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: scale(0);
+  pointer-events: none;
+  transition: transform 500ms ease-in-out, color 500ms ease-in-out, background-color 500ms ease-in-out;
+}
+
+.top-btn.show {
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.top-btn.show:hover {
+  transform: scale(1.2);
+  color: var(--elements);
+  background-color: var(--color);
+}
+
+.top-btn.show:active {
+  transform: scale(0.8);
+  background-color: var(--input);
+  color: var(--color);
+}
+
+.top-btn-icon {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 700px) {
+  /* .top-btn {
+    padding: 1.5rem;
+  } */
+
+  .top-btn-icon {
+    font-size: 2rem;
   }
 }

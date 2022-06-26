@@ -1,6 +1,7 @@
 import CountryCard from './CountryCard';
 import Header from './Header';
 import Input from './Input';
+import BackToTopBtn from './BackToTopBtn';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -95,14 +96,15 @@ function App() {
     <div className="app">
       <Header />
       <main>
+        <BackToTopBtn />
         <Input searchRegion={searchRegion} changeRegion={changeRegion} filteredValue={filtered_value}/>
         <div className='country-list grid-container'>
           {filtered_countries 
-            ? filtered_countries.map(country => {
-                return <CountryCard key={country.fifa} country={country} searchVal={search_value} />
+            ? filtered_countries.map((country, index) => {
+                return <CountryCard key={index} country={country} searchVal={search_value} />
               })
-            : display_countries.map(country => {
-                return <CountryCard key={country.fifa} country={country} searchVal={search_value} />
+            : display_countries.map((country, index) => {
+                return <CountryCard key={index} country={country} searchVal={search_value} />
               })
           }
         </div>
