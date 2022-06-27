@@ -39,8 +39,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://callme-al.github.io/fementor-rest-countries/#/)
+- Live Site URL: [GitHub Repo](https://github.com/CallMe-AL/fementor-rest-countries)
 
 ## My process
 
@@ -93,8 +93,5 @@ Using RegEx to search for data was really cool! I'd love to gain more knowledge 
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
+- Website - [My Portfolio](https://callme-al.github.io/portfolio/)
+- Frontend Mentor - [@CallMe-Al](https://www.frontendmentor.io/profile/CallMe-AL)
