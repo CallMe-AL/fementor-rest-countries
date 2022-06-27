@@ -87,6 +87,7 @@ Using RegEx to search for data was really cool! I'd love to gain more knowledge 
 ### Useful resources
 
 - [React Router Docs](https://reactrouter.com/docs/en/v6/getting-started/tutorial) - Getting started and more with React Router.
+- [REST Countries Docs](https://restcountries.com/) - How to use the REST Countries API.
 - [Object.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) - Great doc for learning how the method works and what it returns.
 - [The select tag in React](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys) - How React treats the select attribute differently. Very useful when I tried learning how to store filtered selections in localstorage.
 - [Marking search terms](https://bitsofco.de/a-one-line-solution-to-highlighting-search-matches/) - Gave me an idea how to highlight search terms. Also where I learned of the mark element for the first time. I had to change the implementation around for React, as noted above.
