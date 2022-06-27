@@ -40,6 +40,11 @@ const CountryCard = ({ country, searchVal }) => {
     let match = name.match(regex);
 
     if (match != null) {
+      // splits name into two substrings, taking out the matched string
+      // array with two indices: first is substring before the match, second is substring after the match
+      // each index can be "" if the matched term is the beginning/end of the name
+      // ex: match = "Ger" in Germany
+      // parts array: ["", "many"]
       let parts = name.split(match[0], 2)
 
       return <div>{parts[0]}<mark>{match[0]}</mark>{parts[1]}</div>
