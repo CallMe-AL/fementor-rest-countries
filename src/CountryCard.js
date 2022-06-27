@@ -14,7 +14,7 @@ const CountryCard = ({ country, searchVal }) => {
     let options = {
       root: null, // browser viewport
       rootMargin: '50px',
-      threshold: 1.0
+      threshold: 0.25
     }
 
     // setting up the callback
