@@ -26,7 +26,6 @@ const Input = ({ searchRegion, changeRegion, filteredValue }) => {
           <label htmlFor="region" className='sr-only'>Filter by Region</label>
           <select 
             className='select-region'
-            type="search" 
             id='region' 
             name='region' 
             onChange={changeRegion}

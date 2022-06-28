@@ -54,14 +54,14 @@ const CountryCard = ({ country, searchVal }) => {
   }
 
   return (
-    <article className='country-card' ref={card}>
+    <div className='country-card' ref={card}>
       {
         load &&
         <Link to={`/country/${country.cca3}`} state={{ country: country }} className="country-link">
           <div className='country-img-container'>
             <img className="country-img" src={country.flags.svg ? country.flags.svg : country.flags.png} alt={`Flag of ${country.name.common}`}/>
           </div>
-          <div className="card-content">
+          <article className="card-content">
             <h2>{searchVal 
                   ? checkMatch(country.name.common)
                   : country.name.common
@@ -70,10 +70,10 @@ const CountryCard = ({ country, searchVal }) => {
             <p>Population: <span className="population">{country.population}</span></p>
             <p>Region: <span className="region">{country.region}</span></p>
             <p>Capital: <span className="capital">{country.capital ? country.capital[0] : 'No capital listed'}</span></p>
-          </div>
+          </article>
         </Link>
       }
-    </article>
+    </div>
   )
 }
 
